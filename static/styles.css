@@ -7,54 +7,106 @@
   box-sizing: border-box;
 }
 
+/* COLORS */
+
+:root {
+  --background-color: #F0F5F7;
+  --default-color: #0094D4;
+  --default-white: #FFFFFF;
+  --default-border-color: #DCDCDC;
+  --default-gray: #52525b;
+}
+
 body {
-  background-color: #f7f0f5;
+  background-color: var(--background-color);
   font-family: 'Roboto', sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+img {
+  width: 124px;
+}
+
 .container {
-  text-align: center;
-  background-color: #FFFFFF;
-  border: 1px solid #DCDCDC;
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  background-color: var(--default-white);
+  border: 1px solid var(--default-border-color);
+  width: 400px;
+  height: auto;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 32px;
+  font-family: 'IBM Plex Sans';
+}
+
+#line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--default-border-color);
 }
 
 ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 1rem;
+  padding-top: 5px;
   list-style: none;
-  padding: 0;
+  border: 1px solid var(--default-border-color);
 }
 
 li {
   margin-bottom: 5px;
 }
 
+.buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
 .addPatient {
-  background-color: #0094d4;
-  border: none;
-  color: #FFFFFF;
+  width: 200px;
+  background-color: var(--default-color);
+  border: 1px solid var(--default-color);
+  color: var(--default-white);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 1rem;
-  margin-top: 20px;
   cursor: pointer;
 }
 
 .eraseHistory {
-  background-color: #FFFFFF;
-  border: 1px solid #DCDCDC;
-  color: gray;
+  background-color: var(--default-white);
+  border: 1px solid var(--default-border-color);
+  color: var(--default-gray);
   padding: 10px 20px;
   text-align: center;
+  margin-left: auto;
   text-decoration: none;
   display: inline-block;
   font-size: 1rem;
-  margin-top: 20px;
   cursor: pointer;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 12px;
+  color: var(--default-gray);
 }

@@ -7,15 +7,21 @@
   <title>PatientCare | System</title>
 </head>
 <body>
+  
   <div class="container">
-      <h1>Patient History:</h1>
+      <img src="{{ url_for('static', filename='images/patientCare.svg') }}" alt="patientCare">
+      <h1>Patient History</h1>
+      <div id="line"></div>
       <ul>
         {% for patients in patients %}
-        <li>{{ patients[1] }} - {{ patients[2] }} anos - {{ patients[3] }}</li>
+        <li>{{ patients[1] }} | {{ patients[2] }} Years | {{ patients[3] }}</li>
         {% endfor %}
       </ul>
-      <a href="{{ url_for('newPatient') }}"><button class="addPatient">Add New Patient</button></a>
-      <a href="{{ url_for('eraseHistory') }}" class="eraseHistory">Erase History</a>
+      <div class="buttons">
+        <a href="{{ url_for('newPatient') }}"><button class="addPatient">Add New Patient</button></a>
+        <a href="{{ url_for('eraseHistory') }}" class="eraseHistory">Erase History</a>
+      </div>
   </div>
+  <p>© 2024 Nader Fares.</p>
 </body>
 </html>
