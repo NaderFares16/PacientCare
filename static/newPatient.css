@@ -1,0 +1,23 @@
+.container {
+  width: 60%;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #F9F9F9;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.submitBtn {
+  width: 50%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #0094d4;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
