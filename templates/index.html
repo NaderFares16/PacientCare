@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>PatientCare | System</title>
+</head>
+<body>
+  <div class="container">
+      <h1>Patient History:</h1>
+      <ul>
+        {% tor patient in patient %}
+        <li>{{ patient[1] }} - {{ patient[2] }} anos - {{ patient[3] }}</li>
+        {% endfor %}
+      </ul>
+      <a href="{{ url_for('new_patient') }}"><button class="addPatient">Add New Patient</button></a>
+      <a href="{{ url_for('clear_patient') }}" class="clearPatient">Erase History</a>
+  </div>
+</body>
+</html>
