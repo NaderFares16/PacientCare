@@ -30,7 +30,11 @@ def index():
   cursor.execute('SELECT * FROM patients')
   patients = cursor.fetchall()
   conn.close()
-  return render_template('index.html', patients=patients)
+
+  if not patients:
+    return render_template('index.html', no_records=True)
+  else:
+    return render_template('index.html', patients=patients)
 
 @app.route('/newPatient', methods=['GET', 'POST'])
 def newPatient():

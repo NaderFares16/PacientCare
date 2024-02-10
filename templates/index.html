@@ -12,12 +12,16 @@
       <img src="{{ url_for('static', filename='images/patientCare.svg') }}" alt="patientCare">
       <h1>Patient History</h1>
       <div id="line"></div>
-      <ul>
-        {% for patient in patients %}
-        <li id="patientli"><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}
-        <!-- <li><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}</li> -->
-        {% endfor %}
-      </ul>
+      {% if no_records %}
+        <p style="font-size: 1rem; margin-bottom: 16px;">No Medical Registry</p>
+      {% else %}
+        <ul>
+          {% for patient in patients %}
+          <li id="patientli"><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}
+          <!-- <li><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}</li> -->
+          {% endfor %}
+        </ul>
+      {% endif %}
       <div class="buttons">
         <a href="{{ url_for('newPatient') }}"><button class="addPatient">Add New Patient</button></a>
         <a href="{{ url_for('eraseHistory') }}" class="eraseHistory">Erase History</a>
