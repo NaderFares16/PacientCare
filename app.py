@@ -75,5 +75,17 @@ def eraseHistory():
   conn.close()
   return redirect(url_for('index'))
 
+@app.route('/patient/<int:id>')
+def viewPatient(id):
+  print(id)
+  conn = sqlite3.connect('hospital_management.db')
+  cursor = conn.cursor()
+  cursor.execute('''
+    SELECT * FROM patients WHERE id = ?
+  ''', (id,))
+  patient = cursor.fetchone()
+  conn.close()
+  return render_template('patient_details.html', patient=patient, patient_name=patient[1])
+
 if __name__ == '__main__':
   app.run(debug=True)

@@ -13,8 +13,8 @@
       <h1>Patient History</h1>
       <div id="line"></div>
       <ul>
-        {% for patients in patients %}
-        <li>{{ patients[1] }} | {{ patients[2] }} Years | {{ patients[3] }}</li>
+        {% for patient in patients %}
+        <li><a href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}</li>
         {% endfor %}
       </ul>
       <div class="buttons">
