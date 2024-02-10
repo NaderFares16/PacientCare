@@ -1,0 +1,3 @@
+[build]
+  command = "python app.py"  # Substitua "build.py" pelo script que constrói seu aplicativo Python
+  publish = "static"           # Substitua "static" pelo diretório onde estão os arquivos estáticos do seu aplicativo (por exemplo, CSS, JavaScript)
