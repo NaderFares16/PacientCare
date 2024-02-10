@@ -3,10 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='patient_details.css') }}">
   <title>Patient Details | {{ patient_name }}</title>
 </head>
 <body>
-  <h1>Patient Details</h1>
+  <div class="container">
+    <div style="width: 100%;">
+      <img src="{{ url_for('static', filename='images/patientCare.svg') }}" alt="patientCare">
+    </div>
+    <div class="record">
+      <img src="{{ url_for('static', filename='images/patient.svg') }}" alt="">
+      <div class="record-content">
+        <div class="record-title">
+          {{ patient[1] }}
+        </div>
+        <div class="record-body">
+          <div class="record-item">
+            <div class="record-item-title">Age</div>
+            <div class="record-item-value">{{ patient[2] }}</div>
+          </div>
+          <div class="record-item">
+            <div class="record-item-title">Gender</div>
+            <div class="record-item-value">{{ patient[3] }}</div>
+          </div>
+          <div class="record-item">
+            <div class="record-item-title">Document</div>
+            <div class="record-item-value">{{ patient[4] }}</div>
+          </div>
+          <div class="record-item">
+            <div class="record-item-title">Address</div>
+            <div class="record-item-value">{{ patient[5] }}</div>
+          </div>
+          <div class="record-item">
+            <div class="record-item-title">Phone</div>
+            <div class="record-item-value">{{ patient[6] }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="returnbtn" href="{{ url_for('index') }}">Return</a>
+  </div>
+  <!-- <h1>Patient Details</h1>
   <p>Name: {{ patient[1] }}</p>
   <p>Age: {{ patient[2] }}</p>
   <p>Gender: {{ patient[3] }}</p>
@@ -14,5 +51,6 @@
   <p>Address: {{ patient[5] }}</p>
   <p>Phone: {{ patient[6] }}</p>
   <a href="{{ url_for('index') }}">Back to Patient List</a>
+  -->
 </body>
 </html>

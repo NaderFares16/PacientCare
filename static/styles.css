@@ -110,3 +110,16 @@ p {
   font-size: 12px;
   color: var(--default-gray);
 }
+
+#patient {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: ease 100ms;
+  border: 1px solid transparent;
+}
+
+#patient:hover {
+  color: var(--default-color);
+  border-bottom: 1px solid var(--default-color);
+}
