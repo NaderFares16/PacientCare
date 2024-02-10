@@ -41,16 +41,15 @@
         </div>
       </div>
     </div>
-    <a class="returnbtn" href="{{ url_for('index') }}">Return</a>
+    <div style="width: 100%; display: flex; gap: 1rem; align-items: center; justify-content: end;">
+      <a class="returnbtn" href="{{ url_for('index') }}">Return</a>
+      <button id="editBtn">Edit Registry</button>
+    </div>
   </div>
-  <!-- <h1>Patient Details</h1>
-  <p>Name: {{ patient[1] }}</p>
-  <p>Age: {{ patient[2] }}</p>
-  <p>Gender: {{ patient[3] }}</p>
-  <p>Document: {{ patient[4] }}</p>
-  <p>Address: {{ patient[5] }}</p>
-  <p>Phone: {{ patient[6] }}</p>
-  <a href="{{ url_for('index') }}">Back to Patient List</a>
-  -->
+  <script>
+    document.getElementById("editBtn").addEventListener("click", function() {
+      window.location.href = "/patient/{{ patient[0] }}/edit";
+    });
+  </script>
 </body>
 </html>

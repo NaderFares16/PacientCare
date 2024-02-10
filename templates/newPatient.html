@@ -37,7 +37,10 @@
         <label for="phone">Phone:</label>
         <input type="tel" id="phone" name="phone" required placeholder="Phone *"><br><br>
       </div>
-      <input type="submit" value="Add Patient" class="submitBtn">
+      <div class="newPatientbtns">
+        <a class="returnbtn" href="{{ url_for('index') }}">Return</a>
+        <input type="submit" value="Add Patient" class="submitBtn">
+      </div>
     </form>
   </div>
   <p>© 2024 Nader Fares.</p>

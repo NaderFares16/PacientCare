@@ -112,3 +112,15 @@ body {
   font-size: 1rem;
   cursor: pointer;
 }
+
+#editBtn {
+  width: max-content;
+  border: 1px solid var(--default-border-color);
+  color: var(--default-gray);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+}

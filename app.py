@@ -87,5 +87,42 @@ def viewPatient(id):
   conn.close()
   return render_template('patient_details.html', patient=patient, patient_name=patient[1])
 
+@app.route('/patient/<int:id>/edit', methods=['GET'])
+def editPatient(id):
+  conn = sqlite3.connect('hospital_management.db')
+  cursor = conn.cursor()
+  cursor.execute('''
+    SELECT * FROM patients WHERE id = ?
+  ''', (id,))
+  patient = cursor.fetchone()
+  conn.close()
+  return render_template('edit_patient.html', patient=patient, patient_name=patient[1])
+
+@app.route('/patient/<int:id>/update', methods=['POST'])
+def updatePatient(id):
+  if request.method == 'POST':
+    name = request.form['name']
+    age = request.form['age']
+    gender = request.form['gender']
+    document = request.form['document']
+    address = request.form['address']
+    phone = request.form['phone']
+
+    conn = sqlite3.connect('hospital_management.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+      UPDATE patients SET
+      name = ?,
+      age = ?,
+      gender = ?,
+      document = ?,
+      address = ?,
+      phone = ?
+      WHERE id = ?
+    ''', (name, age, gender, document, address, phone, id))
+    conn.commit()
+    conn.close()
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
   app.run(debug=True)

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='edit_patient.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Edit Medical Registry | {{ patient_name }}</title>
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='images/patientCare.svg') }}" alt="patientCare">
+    <h1>Edit Registry</h1>
+    <div id="line"></div>
+    <form action="/patient/{{ patient[0] }}/update" method="post">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Name *" value="{{ patient[1] }}"><br><br>
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required placeholder="Age *" value="{{ patient[2] }}"><br><br>
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required placeholder="Gender *" value="{{ patient[3] }}"><br><br>
+      </div>
+      <div>
+        <label for="document">Document:</label>
+        <input type="text" id="document" name="document" required placeholder="Document *" value="{{ patient[4] }}"><br><br>
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required placeholder="Address *" value="{{ patient[5] }}"><br><br>
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Phone *" value="{{ patient[6] }}"><br><br>
+      </div>
+      <div class="newPatientbtns">
+        <a class="returnbtn" href="{{ url_for('index') }}">Return</a>
+        <input type="submit" value="Update" class="submitBtn">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
