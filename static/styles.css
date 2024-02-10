@@ -14,6 +14,7 @@
   --default-color: #0094D4;
   --default-white: #FFFFFF;
   --default-border-color: #DCDCDC;
+  --border-color: #EAEAEA;
   --default-gray: #52525b;
 }
 
@@ -60,14 +61,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding-left: 1rem;
-  padding-top: 5px;
   list-style: none;
-  border: 1px solid var(--default-border-color);
-}
-
-li {
-  margin-bottom: 5px;
 }
 
 .buttons {
@@ -122,4 +116,15 @@ p {
 #patient:hover {
   color: var(--default-color);
   border-bottom: 1px solid var(--default-color);
+}
+
+#patientli {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 4px;
 }

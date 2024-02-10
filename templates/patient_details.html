@@ -44,6 +44,9 @@
     <div style="width: 100%; display: flex; gap: 1rem; align-items: center; justify-content: end;">
       <a class="returnbtn" href="{{ url_for('index') }}">Return</a>
       <button id="editBtn">Edit Registry</button>
+      <form action="/patient/{{ patient[0] }}/remove" method="post">
+        <input id="deletebtn" type="submit" value="Delete Registry">
+      </form>
     </div>
   </div>
   <script>

@@ -124,5 +124,18 @@ def updatePatient(id):
     conn.close()
     return redirect(url_for('index'))
 
+# DELETE PATIENT
+@app.route('/patient/<int:id>/remove', methods=['POST'])
+def removePatient(id):
+  conn = sqlite3.connect('hospital_management.db')
+  cursor = conn.cursor()
+  cursor.execute('''
+    DELETE FROM patients WHERE id = ?               
+  ''', (id,))
+  conn.commit()
+  conn.close()
+  return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
   app.run(debug=True)

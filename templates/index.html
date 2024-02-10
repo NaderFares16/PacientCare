@@ -14,7 +14,8 @@
       <div id="line"></div>
       <ul>
         {% for patient in patients %}
-        <li><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}</li>
+        <li id="patientli"><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}
+        <!-- <li><a id="patient" href="{{ url_for('viewPatient', id=patient[0]) }}">{{ patient[1] }}</a> | {{ patient[2] }} Years | {{ patient[3] }}</li> -->
         {% endfor %}
       </ul>
       <div class="buttons">
